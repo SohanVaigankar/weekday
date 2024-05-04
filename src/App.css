@@ -1,31 +1,3 @@
 .App{
-    max-width: 1600px;
-}
-
-.JobsContainer{
-    margin: 0 auto;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    grid-auto-rows: minmax(100px, auto);
-    
-}
-
-@media (max-width: 1240px) {
-    .JobsContainer{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-}
-@media (max-width: 768px) {
-    .JobsContainer{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 576px) {
-    .JobsContainer{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    
+    padding: 2rem;
 }
