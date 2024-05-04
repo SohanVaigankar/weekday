@@ -1,0 +1,30 @@
+.ButtonContainer {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+  
+  .ButtonContainer:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+  
+  /* variants */
+  
+  .Default {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+  .Secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+  
