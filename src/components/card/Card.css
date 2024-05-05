@@ -10,10 +10,6 @@
     flex-direction: column;
     gap: 1rem;
 
-    /* max-height: 500px; */
-
-    /* delete */
-    /* width: 280px; */
     margin: 0 auto;
     font-size: 14px;
 
@@ -42,8 +38,6 @@
     justify-content: space-between;
     gap: 1rem;
 }
-
-.Metadata {}
 
 .MetadataHeader {
     display: flex;
@@ -80,6 +74,9 @@
     font-size: 14px;
     text-align: start;
 }
+.EstimatedSalary > span{
+    font-size: 11px;
+}
 
 .CompanyDescription {
     display: flex;
@@ -91,12 +88,6 @@
     text-align: start;
     margin: 0;
     color: var(--text-quarternery);
-}
-
-.CompanyDescription>div {
-    position;
-    relative;
-
 }
 
 .CompanyDescription > div p {
@@ -128,8 +119,6 @@
 .ShowMoreBtn > span:hover {
     cursor: pointer;
 }
-
-.Experience {}
 
 .Experience > h4 {
     margin: 0;

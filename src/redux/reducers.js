@@ -12,10 +12,10 @@ const initialState = {
 const filtersReducer = (state = initialState, action) => {
   switch (action.type) {
     case APPLY_FILTERS:
-      const { filterName, value } = action.payload;
       return {
         ...state,
-        [filterName]: value,
+        // updating filter state
+        [action.payload?.filterName]: action.payload?.value,
       };
     default:
       return state;

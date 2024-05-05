@@ -5,7 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
-const Filter = (props) => {
+const MultiSelect = (props) => {
   const { options, placeholder, label, onChange } = props;
   const [selectedOptions, setSelectedOptions] = useState([]);
 
@@ -21,7 +21,7 @@ const Filter = (props) => {
   return (
     <Autocomplete
       multiple
-      id={`autocomplete-${label.replace(/\s+/g, "-")}`}
+      id={`autocomplete-${label}`}
       options={options}
       value={selectedOptions}
       onChange={handleChange}
@@ -52,4 +52,4 @@ const Filter = (props) => {
   );
 };
 
-export default Filter;
+export default MultiSelect;

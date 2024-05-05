@@ -22,7 +22,6 @@ export function filteredJobs(jobs, filters) {
       filters.minimumSalary.some((salaryRange) => {
         const minSalary = salaryRange.slice(0, -1);
         const jobMinSalary = Number(job.minJdSalary);
-        const jobMaxSalary = Number(job.maxJdSalary);
         return jobMinSalary >= minSalary;
       });
 

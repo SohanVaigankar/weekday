@@ -1,5 +1,4 @@
 // components
-Button;
 import Button from "../button/Button";
 // styles
 import "./Card.css";
@@ -44,7 +43,8 @@ const Card = (props) => {
           <div className="EstimatedSalary">
             {`Estimated Salary: ${data?.salaryCurrencyCode} ${
               data?.minJdSalary ?? 0
-            } - ${data?.maxJdSalary ?? 0} LPA ✅`}
+            } - ${data?.maxJdSalary ?? 0} LPA `}
+            <span>✅</span>
           </div>
         </section>
         <section className="CompanyDescription">
@@ -75,7 +75,7 @@ const Card = (props) => {
         text={"Unlock referral asks"}
         className={""}
         variant="secondary"
-        onClickHandler={handleApply}
+        // onClickHandler={handleApply}
       />
     </div>
   );
