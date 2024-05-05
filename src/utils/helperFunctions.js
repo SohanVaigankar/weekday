@@ -1,23 +1,22 @@
-export function filteredJobs(jobs, filters) {
-  return jobs.filter((job) => {
-    // Role filter: match any of the selected roles
-    const roleMatch =
+export function filteredJobs(jobList, filters) {
+  return jobList.filter((job) => {
+    // Role filter
+    const checkRole =
       filters.role.length === 0 ||
       filters.role.some(
         (role) => role.toLowerCase() === job.jobRole.toLowerCase()
       );
 
-    // Experience filter: assuming you have numerical ranges for experience; adjust as needed
-    const experienceMatch =
+    // Experience filter - return jobs with exp requirements more than set exp
+
+    const checkExperience =
       filters.experience.length === 0 ||
       filters.experience.some((exp) => {
-        const jobMinExp = Number(job.minExp);
-        const jobMaxExp = Number(job.maxExp);
-        return exp <= jobMaxExp && exp >= jobMinExp;
+        return exp === Number(job.minExp);
       });
 
-    // Salary filter: match any of the salary ranges, assumes salaries are provided in some way
-    const salaryMatch =
+    // Salary filter - compare jobs that fall in that specific range
+    const checkMinSalary =
       filters.minimumSalary.length === 0 ||
       filters.minimumSalary.some((salaryRange) => {
         const minSalary = salaryRange.slice(0, -1);
@@ -25,11 +24,12 @@ export function filteredJobs(jobs, filters) {
         return jobMinSalary >= minSalary;
       });
 
-    const companyNameMatch =
+    // check if search matches company name
+    const checkCompanyName =
       filters.companyName.length === 0 ||
       job?.companyName?.toLowerCase().includes(filters.companyName);
 
     // Combine all matches with AND
-    return roleMatch && experienceMatch && salaryMatch && companyNameMatch;
+    return checkRole && checkExperience && checkMinSalary && checkCompanyName;
   });
 }

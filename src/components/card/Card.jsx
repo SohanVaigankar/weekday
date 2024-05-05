@@ -64,12 +64,11 @@ const Card = (props) => {
             </div>
           </div>
         </section>
-        {data?.minExp && (
-          <section className="Experience">
-            <h4>Minimum Experience</h4>
-            <p>{data?.minExp} years</p>
-          </section>
-        )}
+
+        <section className="Experience">
+          <h4>Minimum Experience</h4>
+          <p>{Number(data?.minExp)} years</p>
+        </section>
       </section>
       <Button
         leftIcon={"⚡️"}

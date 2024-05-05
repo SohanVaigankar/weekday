@@ -14,7 +14,7 @@ const MultiSelect = (props) => {
     // calls the dispatch action for the filters state stored in redux
     onChange(
       placeholder,
-      newValue.map((option) => option.label)
+      newValue.map((option) => option.value)
     );
   };
 

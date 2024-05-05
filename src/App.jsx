@@ -42,7 +42,6 @@ function App() {
       console.error("fetchJobList", error);
     }
   };
-  console.log("data", data);
 
   useEffect(() => {
     fetchJobList();
