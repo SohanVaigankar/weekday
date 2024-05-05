@@ -75,8 +75,8 @@ export const EXPERIENCE_OPTIONS = [
 
 export const MODE_OPTIONS = [
   { label: "Remote", id: "1", value: "remote" },
-  { label: "Hybrid", id: "2", value: "hybrid" },
-  { label: "In-office", id: "3", value: "in-office" },
+  { label: "Hybrid/In-office", id: "2", value: "hybrid-office" },
+//   { label: "In-office", id: "3", value: "in-office" },
 ];
 
 export const MIN_SALARY_OPTIONS = [

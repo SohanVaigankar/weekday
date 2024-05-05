@@ -1,8 +1,29 @@
-# React + Vite
+# Weekday - Frontend SDE 1 task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deployment Link - [Here](https://weekday-sohan.netlify.app)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tech Stack
+
+- [X] React
+- [X] JavaScript
+- [X] MaterialUI
+- [X] CSS
+- [X] Netlify
+- [X] React Infinite Scroll Component
+- [X] React Redux
+
+
+### To run locally simplay clone the repo & execute following command in terminal by navigating to the directory
+
+```js
+npm install && npm run dev
+```
+
+
+### Note: 
+- Due to lack of employee count data in api response, employee count filter was not implemented. Rest everything is implemented
+
+
+
+- Sohan Vaigankar - svaigankar2000@gmail.com

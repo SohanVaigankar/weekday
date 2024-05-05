@@ -16,12 +16,20 @@ export function filteredJobs(jobList, filters) {
       });
 
     // Salary filter - compare jobs that fall in that specific range
+    const checkMode =
+      filters.mode.length === 0 ||
+      filters.mode.some((location) => {
+        if (location.toLowerCase() === "remote") {
+          return location.toLowerCase() === job.location.toLowerCase();
+        }
+        return job.location.toLowerCase() !== "remote";
+      });
+
+    // Salary filter - compare jobs that fall in that specific range
     const checkMinSalary =
       filters.minimumSalary.length === 0 ||
-      filters.minimumSalary.some((salaryRange) => {
-        const minSalary = salaryRange.slice(0, -1);
-        const jobMinSalary = Number(job.minJdSalary);
-        return jobMinSalary >= minSalary;
+      filters.minimumSalary.some((salary) => {
+        return Number(job.minJdSalary) >= salary;
       });
 
     // check if search matches company name
@@ -30,6 +38,12 @@ export function filteredJobs(jobList, filters) {
       job?.companyName?.toLowerCase().includes(filters.companyName);
 
     // Combine all matches with AND
-    return checkRole && checkExperience && checkMinSalary && checkCompanyName;
+    return (
+      checkRole &&
+      checkExperience &&
+      checkMode &&
+      checkMinSalary &&
+      checkCompanyName
+    );
   });
 }
