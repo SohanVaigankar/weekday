@@ -14,6 +14,7 @@ import { fetchJdList } from "./api/client";
 
 function App() {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [allJobs, setAllJobs] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -40,10 +41,13 @@ function App() {
       }
     } catch (error) {
       console.error("fetchJobList", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
+    setIsLoading(true);
     fetchJobList();
   }, []);
 
@@ -57,7 +61,11 @@ function App() {
 
       <FilterGroup />
 
-      {data?.length === 0 ? (
+      {isLoading ? (
+        <Box display="flex" justifyContent="center" mt={2} minHeight="80px">
+          Fetching Available jobs...
+        </Box>
+      ) : data?.length === 0 ? (
         <Box textAlign="center" mt={2}>
           <p>oops! no jobs found</p>
         </Box>
