@@ -16,7 +16,8 @@ Tech Stack
 
 1. simply clone this github repository on your local machine
 2. navigate to the cloned repo using cd command in terminal
-3. execute following command in the directory
+3. ensure that you're running node v20 or above
+4. execute following command in the directory
 
    ```js
    npm install && npm run dev
