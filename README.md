@@ -23,6 +23,8 @@ Tech Stack
    npm install && npm run dev
    ```
 
+5. follow the instructions on terminal, by default your application shall be running on [http://localhost:5173](http://localhost:5173)
+
 ### Note:
 
 - Due to lack of employee count data in api response, employee count filter was not implemented. Rest everything is implemented
