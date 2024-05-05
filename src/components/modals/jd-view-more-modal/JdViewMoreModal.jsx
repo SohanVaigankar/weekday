@@ -1,4 +1,6 @@
 import { Box, Modal, Typography } from "@mui/material";
+// styles
+import "./JdViewMoreModal.css";
 
 const JdViewMoreModal = (props) => {
   const { open, handleClose, data } = props;
@@ -19,18 +21,10 @@ const JdViewMoreModal = (props) => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           outline: "none",
+          padding: "1rem",
         }}
       >
-        <Box
-          bgcolor={"#fff"}
-          height={"max-content"}
-          width={"100%"}
-          maxWidth={"768px"}
-          borderRadius={4}
-          padding={3}
-          paddingTop={4}
-          paddingBottom={4}
-        >
+        <div className="ModalContent">
           <Typography
             variant="h4"
             sx={{
@@ -42,10 +36,10 @@ const JdViewMoreModal = (props) => {
           >
             About Company
           </Typography>
-          <Typography mt={2} maxHeight={"75vh"} sx={{ overflow: "auto" }}>
-            {data}
-          </Typography>
-        </Box>
+          <div className="ModalTextContainer">
+            <p>{data}</p>
+          </div>
+        </div>
       </Box>
     </Modal>
   );
