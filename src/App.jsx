@@ -29,8 +29,8 @@ function App() {
       });
       const result = await fetchJdList(body);
 
-      if (result?.totalCount > 0) {
-        setData([...allJobs, result?.jdList]);
+      if (result?.totalCount > 0 && result?.jdList.length >= 0) {
+        setData([...allJobs, ...result.jdList]);
       }
       setAllJobs((prevJobs) => [...prevJobs, ...result.jdList]);
       setOffset((prevOffset) => prevOffset + 10);
@@ -57,39 +57,45 @@ function App() {
 
       <FilterGroup />
 
-      <InfiniteScroll
-        dataLength={data?.length}
-        next={fetchJobList}
-        hasMore={hasMore}
-        loader={
-          <Box display="flex" justifyContent="center" mt={2} minHeight="80px">
-            Fetching Available jobs...
-          </Box>
-        }
-        endMessage={
-          <Box textAlign="center" mt={2}>
-            <p>No more jobs to load</p>
-          </Box>
-        }
-        scrollThreshold={0.9}
-      >
-        <Grid
-          container
-          spacing={2}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: 2,
-          }}
+      {data?.length === 0 ? (
+        <Box textAlign="center" mt={2}>
+          <p>oops! no jobs found</p>
+        </Box>
+      ) : (
+        <InfiniteScroll
+          dataLength={data?.length}
+          next={fetchJobList}
+          hasMore={hasMore}
+          loader={
+            <Box display="flex" justifyContent="center" mt={2} minHeight="80px">
+              Fetching Available jobs...
+            </Box>
+          }
+          endMessage={
+            <Box textAlign="center" mt={2}>
+              <p>No more jobs to load</p>
+            </Box>
+          }
+          scrollThreshold={0.9}
         >
-          {data?.map((job, index) => (
-            <Grid item key={index} xs={12} sm={6} md={4} lg={3} xl={2}>
-              <Card key={job.jdUid} data={job} />
-            </Grid>
-          ))}
-        </Grid>
-      </InfiniteScroll>
+          <Grid
+            container
+            spacing={2}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: 2,
+            }}
+          >
+            {data?.map((job, index) => (
+              <Grid item key={index} xs={12} sm={6} md={4} lg={3} xl={2}>
+                <Card key={job.jdUid} data={job} />
+              </Grid>
+            ))}
+          </Grid>
+        </InfiniteScroll>
+      )}
     </div>
   );
 }
