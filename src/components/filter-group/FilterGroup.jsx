@@ -72,9 +72,9 @@ const FilterGroup = () => {
           <MultiSelect {...filters.roles} />
         </Grid>
         {/* no. of employee filter */}
-        <Grid item xs={12} sm="auto" sx={{ minWidth: "280px" }}>
+        {/* <Grid item xs={12} sm="auto" sx={{ minWidth: "280px" }}>
           <MultiSelect {...filters.employees} />
-        </Grid>
+        </Grid> */}
         {/* experience filter */}
         <Grid item xs={12} sm="auto" sx={{ minWidth: "280px" }}>
           <MultiSelect {...filters.experience} />

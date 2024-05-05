@@ -2,28 +2,28 @@
 
 ## Deployment Link - [Here](https://weekday-sohan.netlify.app)
 
-
 Tech Stack
 
-- [X] React
-- [X] JavaScript
-- [X] MaterialUI
-- [X] CSS
-- [X] Netlify
-- [X] React Infinite Scroll Component
-- [X] React Redux
+- [x] React
+- [x] JavaScript
+- [x] MaterialUI
+- [x] CSS
+- [x] Netlify - for deployment
+- [x] React Infinite Scroll Component
+- [x] React Redux
 
+### To run the project locally
 
-### To run locally simplay clone the repo & execute following command in terminal by navigating to the directory
+1. simply clone this github repository on your local machine
+2. navigate to the cloned repo using cd command in terminal
+3. execute following command in the directory
 
-```js
-npm install && npm run dev
-```
+   ```js
+   npm install && npm run dev
+   ```
 
+### Note:
 
-### Note: 
 - Due to lack of employee count data in api response, employee count filter was not implemented. Rest everything is implemented
 
-
-
-- Sohan Vaigankar - svaigankar2000@gmail.com
+- [Sohan Vaigankar](https://peerlist.io/sohan) - svaigankar2000@gmail.com
