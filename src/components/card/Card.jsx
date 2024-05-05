@@ -1,10 +1,18 @@
 // components
+import { useState } from "react";
+// components
 import Button from "../button/Button";
+import { JdViewMoreModal } from "../modals";
 // styles
 import "./Card.css";
 
 const Card = (props) => {
   const { data } = props;
+
+  const [open, setOpen] = useState(false);
+
+  const openModal = () => setOpen(true);
+  const closeModal = () => setOpen(false);
 
   // handlers
   const handleApply = (e) => {
@@ -52,7 +60,7 @@ const Card = (props) => {
           <div style={{ position: "relative" }}>
             <p>{data?.jobDetailsFromCompany}</p>
             <div className="ShowMoreBtn">
-              <span>View job</span>
+              <span onClick={openModal}>View job</span>
             </div>
           </div>
         </section>
@@ -76,6 +84,11 @@ const Card = (props) => {
         className={""}
         variant="secondary"
         // onClickHandler={handleApply}
+      />
+      <JdViewMoreModal
+        open={open}
+        handleClose={closeModal}
+        data={data?.jobDetailsFromCompany}
       />
     </div>
   );
